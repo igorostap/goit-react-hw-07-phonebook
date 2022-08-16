@@ -4,7 +4,10 @@ export const ListItem = styled.li`
   display: flex;
   list-style: none;
   margin: 5px;
-  max-width: 320px;
+  max-width: 480px;
+  background: DeepSkyBlue;
+  border: 1px solid black;
+  padding: 5px;
 `;
 
 export const TelNum = styled.span`

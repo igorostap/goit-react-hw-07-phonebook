@@ -3,6 +3,7 @@ import { ContactList } from './ContactLList/ContactList';
 import { InputForm } from './InputForm/InputForm';
 import { Filter } from './Filter/Filter';
 import { useState } from 'react';
+import { Phonebook } from './Phonebook/Phonebook.styled';
 
 export function App() {
   const { data } = useGetContactsQuery();
@@ -15,15 +16,17 @@ export function App() {
   );
   return (
     <>
-      <InputForm data={data} />
-      <h1>Phonebook</h1>
-      <Filter filter={filter} filterChange={setFilter} />
-      <h2>Contact List</h2>
-      {contacts ? (
-        <ContactList contacts={filteredContacts} />
-      ) : (
-        <p>No any contacts</p>
-      )}
+      <Phonebook>
+        <InputForm data={data} />
+        <h1>Phonebook</h1>
+        <Filter filter={filter} filterChange={setFilter} />
+        <h2>Contact List</h2>
+        {contacts ? (
+          <ContactList contacts={filteredContacts} />
+        ) : (
+          <p>No any contacts</p>
+        )}
+      </Phonebook>
     </>
   );
 }
